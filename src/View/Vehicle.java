@@ -9,20 +9,29 @@ public class Vehicle {
     private Road carRoad;
 
     // This is a non-default constructor
-    public Vehicle(Road carRoad) {
+    Vehicle(Road carRoad) {
         this.carRoad = carRoad;
     }
 
     // methods
-    public void moveCar (int spacesMoved) {
-        for(int i = 0; i < spacesMoved; ++i){
-            carRoad.next_road.vehicle = this;
-            carRoad.vehicle = null;
-            this.carRoad = this.carRoad.next_road;
-            System.out.println("Vehicle has moved to Road Position " + carRoad.roadPosition);
+    void moveCar() {
+        for (int i = 0; i < 40; ++i) {
+            if (carRoad.canGo) {
+                carRoad.next_road.vehicle = this;
+                carRoad.vehicle = null;
+                this.carRoad = this.carRoad.next_road;
+                System.out.println("Vehicle has moved to Road Position " + carRoad.roadPosition);
+            }
         }
     }
 
     // getters and setters
 
+    public Road getCarRoad() {
+        return carRoad;
+    }
+
+    public void setCarRoad(Road carRoad) {
+        this.carRoad = carRoad;
+    }
 }
