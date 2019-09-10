@@ -11,23 +11,23 @@ public class World {
     private ArrayList<Road> roads = new ArrayList<>();
 
     // This is a default constructor
-    public World() {
-        for (int i = 0; i < 5; ++i) {
+    public World(int numRoads) {
+        for (int i = 0; i < numRoads; ++i) {
             Road tempRoad = new Road();
             roads.add(tempRoad);
             // First
             if (i == 0) {
                 continue;
                 // Last
-            } else if (i == 4) {
+            } else if (i == numRoads - 1) {
                 tempRoad.previous_road = roads.get(i - 1);
             // Middle
             } else {
                 tempRoad.previous_road = roads.get(i - 1);
                 roads.get(i - 1).next_road = tempRoad;
-//                tempRoad.next_road = roads.get(i + 1);
             }
         }
+        roads.get(5).vehicle = new Vehicle(roads.get(5));
     }
 
     // This is a non-default constructor
