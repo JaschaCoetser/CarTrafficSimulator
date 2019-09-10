@@ -13,7 +13,7 @@ public class World {
     // This is a default constructor
     public World(int numRoads) {
         for (int i = 0; i < numRoads; ++i) {
-            Road tempRoad = new Road();
+            Road tempRoad = new Road(i);
             roads.add(tempRoad);
             // First
             if (i == 0) {
@@ -27,7 +27,10 @@ public class World {
                 roads.get(i - 1).next_road = tempRoad;
             }
         }
-        roads.get(5).vehicle = new Vehicle(roads.get(5));
+        Vehicle blueCar = new Vehicle(roads.get(0));
+        roads.get(5).vehicle = blueCar;
+        blueCar.moveCar(5);
+
     }
 
     // This is a non-default constructor

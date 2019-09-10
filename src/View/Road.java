@@ -4,9 +4,10 @@ public class Road {
     Vehicle vehicle;
     Road previous_road;
     Road next_road;
+    int roadPosition;
 
-    public Road() {
-
+    public Road(int roadPosition) {
+        this.roadPosition = roadPosition;
     }
 
 //    public Road(Road previous_road, Road next_road) {
