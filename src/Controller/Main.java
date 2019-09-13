@@ -7,7 +7,4 @@ public class Main {
         World world = new World(50);
         System.out.println();
     }
-
-    // Make a world class , Collection of roads
-    //
 }

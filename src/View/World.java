@@ -39,15 +39,6 @@ public class World {
         blueCar.moveCar();
         vehicles.add(blueCar);
     }
-
-    // This is a non-default constructor
-    // public World( ) {
-
-    // }
-
-    // methods
-
-
     // getters and setters
 
     public ArrayList<Road> getRoads() {
